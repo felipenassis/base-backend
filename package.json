@@ -1,0 +1,38 @@
+{
+  "name": "gestao-backend",
+  "version": "0.3.0",
+  "private": true,
+  "scripts": {
+    "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "prisma:migrate": "prisma migrate dev --name init",
+    "prisma:seed": "ts-node prisma/seed.ts",
+    "test": "jest --runInBand",
+    "test:watch": "jest --watch",
+    "test:ci": "DATABASE_URL=\"file:./test.db?connection_limit=1\" npm test"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.0.0",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "zod": "^3.21.4"
+  },
+  "devDependencies": {
+    "prisma": "^5.0.0",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.5.0",
+    "jest": "^29.6.0",
+    "ts-jest": "^29.1.0",
+    "supertest": "^6.3.3",
+    "@types/express": "^4.17.17",
+    "@types/node": "^20.4.2",
+    "@types/jsonwebtoken": "^9.0.2",
+    "@types/bcryptjs": "^2.4.2",
+    "@types/jest": "^29.5.2",
+    "@types/supertest": "^2.0.12"
+  }
+}
